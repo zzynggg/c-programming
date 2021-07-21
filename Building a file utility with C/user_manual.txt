@@ -1,0 +1,64 @@
+Make sure “logfile.txt”, “a.txt”, “dir2” (destination directory) are created in the same directory.
+Right click the txt file in order to get the correct file path. 
+Assume the different filename is “a.txt” and the destination directory is "dir2".
+All tasks are passed for all example commands in the FIT2100-Assignment1.pdf.
+Assume the source path is: /home/student/Documents/FIT2100/Assignment1/
+Assume the destination path is: /home/student/Documents/FIT2100/Assignment1/dir2/
+Compile the program: gcc fileutil-30885027.c -o fileutil
+
+For Task 1:
+./fileutil
+--	Correct output for “logfile.txt”.
+--	This time rename the filename into “log.txt”. Execute it again. It will show error message such as ‘No such file or directory’.
+
+
+For Task 2:
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt
+--	Correct output for “a.txt”.
+--	Execute it again it will output the default file which is “logfile.txt”.
+
+
+For Task 3:
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -d /home/student/Documents/FIT2100/Assignment1/dir2  
+--	Output ‘Copy successful’. The ‘a.txt’ file in the source path is successfully copied to the destination path.
+--	Without recompiling the c file, execute it again. It will show error message such as ‘File exists’.
+
+
+For Task 4:
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -d /home/student/Documents/FIT2100/Assignment1/dir2 -M 
+--	The source file will be moved from source directory to the destination directory.
+--	This time don’t delete the file in the destination directory. If the destination directory already has a file with the same name as the source file. It will show error message such as ‘Bad address’.
+
+
+For Task 5:
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -d /home/student/Documents/FIT2100/Assignment1/dir2 -F
+--	Make sure in the destination directory has the same file name as the source file. Force the copying of ‘a.txt’ from source directory to destination directory (dir2). The destination file will be replaced by the source file.
+--	In order to know the destination file is replaced successfully by the source file, add some new words in ‘a.txt’ in the source file. After executing, check the content of destination file. It should be same as the content of the modified ‘a.txt’ in source file.
+
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -d /home/student/Documents/FIT2100/Assignment1/dir2 -M -F
+--	Make sure in the destination directory has the same file name as the source file. Force the move of ‘a.txt’ from source directory to destination directory (dir2). The destination file will be replaced by the source file.
+--	In order to know the destination file is replaced successfully by the source file, add some new words in ‘a.txt’ in the source file. After executing, check the content of destination file. It should be same as the content of the modified ‘a.txt’ in source file.
+
+
+Other example commands:
+./fileutil -d /home/student/Documents/FIT2100/Assignment1/dir2
+--	Output ‘Copy successful’. The ‘logfile.txt’ file in the source path is successfully copied to the destination path.
+--	Without recompiling the c file, execute it again. It will show error message such as ‘File exists’.
+
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -M
+--	Output ‘Invalid argument, no destination to move the file!’
+
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -M -F
+--	Output ‘Invalid argument, no destination to move the file!’
+
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -F
+--	Output ‘Invalid argument, -F is redundant as nothing to force here!’
+
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -d -F /home/student/Documents/FIT2100/Assignment1/dir2
+--	Output ‘Invalid argument: immediately after -d, a directory path was expected’
+
+./fileutil /home/student/Documents/FIT2100/Assignment1/a.txt -F -M -d /home/student/Documents/FIT2100/Assignment1/dir2
+--	Make sure in the destination directory has the same file name as the source file. Force the move of ‘a.txt’ from source directory to destination directory (dir2). The destination file will be replaced by the source file.
+--	In order to know the destination file is replaced successfully by the source file, add some new words in ‘a.txt’ in the source file. After executing, check the content of destination file. It should be same as the content of the modified ‘a.txt’ in source file.
+
+

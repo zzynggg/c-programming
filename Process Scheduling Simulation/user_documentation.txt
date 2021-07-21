@@ -1,0 +1,193 @@
+FIT 2100 Assignment 2
+Author: Yong Zi Ying
+Student ID: 30885027
+Start date: 4/10/2020
+Last modified date: 24/10/2020
+
+
+~~~ Task 1 ~~~
+The assumption for fisrt come, first serve is if there's a current process in
+running state and a new process enter. The new process will be in ready state, 
+after the current process finished execution, new process become running from ready state.
+The overall idea is like queueing, which process comes first that process will prioritize
+until it finished execution. 
+(more details explaination will see in function header comment and in-line comment)
+
+compile the program: gcc task-1-30885027.c -o task1
+assume the other tested file is: "testingdata.txt"
+assume other tested filepath is: /home/student/Documents/FIT2100/Assignment2/testingdata.txt
+Make sure "task-1-30885027.c", "scheduler-result.txt", "process-data.txt" and
+"testingdata.txt" is in the same directory.
+The output file "scheduler-result.txt" is an empty file initially.
+"testingdata.txt" the data is taken from week 6, lecture slide
+P1 0 3 5
+P2 2 6 7
+P3 4 4 6
+P4 6 5 2
+
+./task1
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result.txt" file.
+
+./task1 process-data.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result.txt" but it required user to click reload button 
+	in the file manually !!
+
+./task1 testingdata.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result.txt" but it required user to click reload button 
+	in the file manually !!
+
+./task1 testing.txt
+--  It's an invalid filename, output an error message which is
+	'No such file or directory'
+	
+./task1 /home/student/Documents/FIT2100/Assignment2/process-data.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result.txt" but it required user to click reload button 
+	in the file manually !!	
+	
+./task1 /home/student/Documents/FIT2100/Assignment2/testingdata.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result.txt" but it required user to click reload button 
+	in the file manually !!
+	
+./task1 /home/student/Documents/FIT2100/Assignment2/testing.txt
+--  It's an invalid filename, output an error message which is
+	'No such file or directory'
+	
+
+~~~ Task 2 ~~~
+The assumption for round robin with time-slice quantum 2 seconds is when
+a new process enter and an old process becomes ready from running state, the
+NEW process will prioritize. For example, an uncompleted running process will be
+in ready state when it time slice quantum has reached then if there's a new process
+enter then it will prioritize else the old process will continue running.
+(more details explaination will see in function header comment and in-line comment)
+
+compile the program: gcc task-2-30885027.c -o task2
+assume the other tested file is: "testingdata2.txt"
+assume other tested filepath is: /home/student/Documents/FIT2100/Assignment2/testingdata2.txt
+Make sure "task-2-30885027.c", "scheduler-result2.txt", "process-data.txt" and
+"testingdata2.txt" is in the same directory.
+The output file "scheduler-result2.txt" is an empty file initially.
+"testingdata2.txt" the data is taken from week 8, tutorial 5, 3.2.2 task 2c
+P1 0 3 5
+P2 1 6 7
+P3 4 4 6
+P4 6 2 2
+
+./task2
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result2.txt" file.
+
+./task2 process-data.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result2.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result2.txt" but it required user to click reload button 
+	in the file manually !!
+
+./task2 testingdata2.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result2.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result2.txt" but it required user to click reload button 
+	in the file manually !!
+
+./task2 testing.txt
+--  It's an invalid filename, output an error message which is
+	'No such file or directory'
+
+./task2 /home/student/Documents/FIT2100/Assignment2/process-data.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result2.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result2.txt" but it required user to click reload button 
+	in the file manually !!	
+	
+./task2 /home/student/Documents/FIT2100/Assignment2/testingdata2.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result2.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result2.txt" but it required user to click reload button 
+	in the file manually !!
+	
+./task2 /home/student/Documents/FIT2100/Assignment2/testing.txt
+--  It's an invalid filename, output an error message which is
+	'No such file or directory'
+
+
+~~~ Task 3 ~~~
+The assumption for earliest deadline first is when there's a current process in
+running state and a new process enter. If the new process deadline is smaller
+than the current running process deadline, new process with smaller deadline 
+will prioritize then become running state while for current running process 
+become ready from running state. The overall idea is if there's a smaller
+process deadline, it will prioritize and becomes running process until another
+smaller process deadline is found or the smaller process deadline finished 
+execution then the next process will become running from ready state.
+(more details explaination will see in function header comment and in-line comment)
+
+compile the program: gcc task-3-30885027.c -o task3
+assume the other tested file is: "testingdata3.txt"
+assume other tested filepath is: /home/student/Documents/FIT2100/Assignment2/testingdata3.txt
+Make sure "task-3-30885027.c", "scheduler-result3.txt", "process-data.txt" and
+"testingdata3.txt" is in the same directory.
+The output file "scheduler-result3.txt" is an empty file initially.
+"testingdata3.txt" the data is taken from online
+P1 0 3 5
+P2 2 2 7
+P3 4 3 4
+P4 6 4 1
+
+./task3
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result3.txt" file.
+
+./task3 process-data.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result3.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result3.txt" but it required user to click reload button 
+	in the file manually !!
+
+./task3 testingdata3.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result3.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result3.txt" but it required user to click reload button 
+	in the file manually !!
+
+./task3 testing.txt
+--  It's an invalid filename, output an error message which is
+	'No such file or directory'
+
+./task3 /home/student/Documents/FIT2100/Assignment2/process-data.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result3.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result3.txt" but it required user to click reload button 
+	in the file manually !!	
+	
+./task3 /home/student/Documents/FIT2100/Assignment2/testingdata3.txt
+--  In terminal it will output the sequences of process in ENTER, RUNNING and EXIT.
+	The calculated result will be outputted in "scheduler-result3.txt" file.
+	!! If this is the second try, it will replace the previous outputfile 
+	which is "scheduler-result3.txt" but it required user to click reload button 
+	in the file manually !!
+	
+./task3 /home/student/Documents/FIT2100/Assignment2/testing.txt
+--  It's an invalid filename, output an error message which is
+	'No such file or directory'
+	
+
