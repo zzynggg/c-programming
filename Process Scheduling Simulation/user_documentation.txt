@@ -1,9 +1,7 @@
-FIT 2100 Assignment 2
 Author: Yong Zi Ying
-Student ID: 30885027
 Start date: 4/10/2020
 Last modified date: 24/10/2020
-
+Process Scheduling Simulation
 
 ~~~ Task 1 ~~~
 The assumption for fisrt come, first serve is if there's a current process in

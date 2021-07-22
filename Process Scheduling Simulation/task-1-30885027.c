@@ -1,9 +1,8 @@
 /* 
-FIT 2100 Assignment 2
 Author: Yong Zi Ying
-Student ID: 30885027
 Start date: 4/10/2020
 Last modified date: 24/10/2020
+Process Scheduling Simulation
 
 Description: 
 This task is to implement first come, first serve scheduling algorithms.

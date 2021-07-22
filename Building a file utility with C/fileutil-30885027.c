@@ -1,9 +1,8 @@
 /* 
-FIT 2100 Assignment 1
 Author: Yong Zi Ying
-Student ID: 30885027
 Start date: 22/8/2020
 Last modified date: 10/9/2020
+Building a file utility with C
 
 Description: 
 For task 1, the contents of logfile.txt need to be printed out to the terminal.
